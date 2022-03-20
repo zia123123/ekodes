@@ -11,7 +11,7 @@ const { sequelize } = require('./models/index');
 
 
 // Settings
-const PORT = process.env.PORT || 9001;
+const PORT = process.env.PORT || 3000;
 
 // Middlewares
 app.use(express.json());
