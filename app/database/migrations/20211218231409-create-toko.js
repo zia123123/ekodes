@@ -53,6 +53,12 @@ module.exports = {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       },
+      latitude: {
+        type: Sequelize.STRING
+      },
+      longitude: {
+        type: Sequelize.STRING
+      },
       status: {
         type: Sequelize.BOOLEAN
       },

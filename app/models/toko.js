@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     photo: {
       type: DataTypes.STRING,
     },
+    latitude: {
+      type: DataTypes.STRING
+    },
+    longitude: {
+      type: DataTypes.STRING
+    },
     jambuka: {
       type: DataTypes.DATE,
     },

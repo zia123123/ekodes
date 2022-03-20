@@ -48,46 +48,10 @@ module.exports = {
               this.photo = photo;
               this.jarak = jarak+" KM";
               this.authId = authId;
-
-            }
-          }
-          class Jarak {
-            constructor(jarak) {
-              this.jarak = jarak;
             }
           }
         
         var   CoinArray = [];
-    //    CoinArray.push(new Coin('123'));
-    //    CoinArray.push(new Coin('456'));
-    //    CoinArray.push(new Coin('789'));
-
-    //    let result = ojeks.findAll({
-    //         where: {
-    //             status: true
-    //         },
-    //     })
-
-    //     return apiResponse.successResponseWithData(res, "SUCCESS", result);
-
-                // let quantity = 0;
-        // const a = {
-        //      latitude: req.query.latitude ,
-        //      longitude: req.query.longitude }
-
-        // const b = { 
-        //            latitude: 33.8650,
-        //            longitude: 151.2094
-        //          }
-        // var nilai = haversine(a, b) 
-
-        // if(nilai <1 ){
-        //     var hasil = 1
-        // }else{
-        //     var hasil = Math.round(nilai)
-        // }
-         
-        //console.log(result) 
 
         let result = await ojeks.findAll({
             where: {

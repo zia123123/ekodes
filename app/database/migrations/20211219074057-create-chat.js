@@ -11,9 +11,13 @@ module.exports = {
       nama: {
         type: Sequelize.STRING
       },
-      idtransaksi: {
+      transaksiId: {
         type: Sequelize.INTEGER,
-        unique: true
+        allowNull: false,
+      },
+      penjual: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       deskripsi: {
         type: Sequelize.TEXT

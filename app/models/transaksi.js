@@ -1,34 +1,52 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class transaksi extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  transaksi.init({
-    nama: DataTypes.STRING,
-    notelp: DataTypes.STRING,
-    koordinat: DataTypes.STRING,
-    catatan: DataTypes.STRING,
-    status: DataTypes.BOOLEAN,
-    typebayar: DataTypes.INTEGER,
-    keranjang: DataTypes.TEXT,
-    idtransaksi: DataTypes.INTEGER,
-    typetransaksi: DataTypes.INTEGER,
-    idpenjual: DataTypes.INTEGER,
-    idpembeli: DataTypes.INTEGER,
-    ongkir: DataTypes.INTEGER,
+
+  const transaksi = sequelize.define('transaksi', {
+    nama: {
+      type: DataTypes.STRING
+    },
+    notelp: {
+      type: DataTypes.STRING
+    },
+    koordinat: {
+      type: DataTypes.STRING
+    },
+    catatan: {
+      type: DataTypes.STRING
+    },
+    status: {
+      type: DataTypes.BOOLEAN
+    },
+    typebayar: {
+      type: DataTypes.INTEGER
+    },
+    keranjang: {
+      type: DataTypes.TEXT
+    },
+    idtransaksi: {
+      type: DataTypes.INTEGER,
+      unique:true
+    },
+    typetransaksi: {
+      type: DataTypes.INTEGER
+    },
+    idpenjual: {
+      type: DataTypes.INTEGER
+    },
+    idpembeli: {
+      type: DataTypes.INTEGER
+    },
+    ongkir: {
+      type: DataTypes.INTEGER
+    },
   }, {
-    sequelize,
-    modelName: 'transaksi',
+    tableName: "transaksis"
   });
+
+  transaksi.associate = function(models) {
+
+  };
+
   return transaksi;
 };

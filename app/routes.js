@@ -12,6 +12,7 @@ const router = express.Router();
 
 
 
+const ChatController = require('./controller/ChatController');
 const BeritaController = require('./controller/BeritaController');
 const UserController = require('./controller/UserController');
 const VoteController = require('./controller/VoteController');
@@ -234,5 +235,12 @@ router.post('/api/feed/create', FeedsController.create);
 router.get('/api/feed/', FeedsController.index);
 router.get('/api/feed/:id',FeedsController.find, FeedsController.show);
 router.delete('/api/feed/delete/:id',FeedsController.find, FeedsController.delete);
+
+
+//chat
+router.post('/api/chat/create', ChatController.create);
+router.get('/api/chat/', ChatController.index);
+router.get('/api/chat/transaksi', ChatController.indexChat);
+router.delete('/api/chat/delete/:id',ChatController.find, ChatController.delete);
 
 module.exports = router;
