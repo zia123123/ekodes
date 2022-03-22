@@ -30,11 +30,11 @@ module.exports = {
       },
 
     async find(req, res, next) {
-        let transaksi = await transaksi.findByPk(req.params.id);
-        if (!transaksi) {
+        let result = await transaksi.findByPk(req.params.id);
+        if (!result) {
         return apiResponse.notFoundResponse(res, "Not Fond");
         } else {
-            req.transaksi = transaksi;
+            req.result = result;
             next();
         }
     },
@@ -68,22 +68,22 @@ module.exports = {
 
     // Show
     async show(req, res) {
-        return apiResponse.successResponseWithData(res, "SUCCESS", req.transaksi);
+        return apiResponse.successResponseWithData(res, "SUCCESS", req.result);
     },
 
     // Update
     async update(req, res) {
-        req.transaksi.status = req.body.status;
-        req.transaksi.save().then(transaksi => {
-        return apiResponse.successResponseWithData(res, "SUCCESS", transaksi);
+        req.result.status = req.body.status;
+        req.result.save().then(result => {
+        return apiResponse.successResponseWithData(res, "SUCCESS", result);
         })
     },
 
     // Delete
     async delete(req, res) {
-        req.toko.status = false;
-        req.toko.save().then(toko => {
-        return apiResponse.successResponseWithData(res, "SUCCESS", toko);
+        req.result.status = false;
+        req.result.save().then(result => {
+        return apiResponse.successResponseWithData(res, "SUCCESS", result);
         })
     },
 
