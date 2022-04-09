@@ -132,6 +132,8 @@ router.get('/api/tranksaksi/:id',TransaksiController.find, TransaksiController.s
 router.delete('/api/tranksaksi/delete/:id',TransaksiController.find, TransaksiController.delete);
 
 router.get('/api/mytranksaksi/', TransaksiController.indexMyOrder);
+router.get('/api/pembeli/mytranksaksi/', TransaksiController.indexMyOrderPembeli);
+
 
 
 

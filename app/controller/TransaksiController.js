@@ -54,9 +54,8 @@ module.exports = {
     async indexMyOrder(req, res) {
         let result = await transaksi.findAll({
             where: {
-           
-                            status:  true,
-                            idpenjual:  req.query.idpenjual
+                    status:  true,
+                    idpenjual:  req.query.idpenjual
             }
                      
         }).then(result => {
@@ -66,6 +65,19 @@ module.exports = {
             });
     },
 
+    async indexMyOrderPembeli(req, res) {
+        let result = await transaksi.findAll({
+            where: {
+                    status:  false,
+                    idpembeli:  req.query.idpembeli
+            }
+                     
+        }).then(result => {
+            return apiResponse.successResponseWithData(res, "SUCCESS", result);
+            }).catch(function (err){
+                return apiResponse.ErrorResponse(res, err);
+            });
+    },
     // Show
     async show(req, res) {
         return apiResponse.successResponseWithData(res, "SUCCESS", req.result);
