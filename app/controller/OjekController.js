@@ -1,4 +1,4 @@
-const { ojeks } = require('../models/index');
+const { ojeks,auths } = require('../models/index');
 const { Op } = require("sequelize");
 
 const haversine = require('haversine-distance')
@@ -22,6 +22,14 @@ module.exports = {
             authId: req.body.authId,
             status: true,
         }).then(result => {
+            let auth = auths.findOne({
+                where: {
+                    id:  req.body.authId
+                },
+            }).then(auth =>{
+                auth.roleid = 2;
+                auth.save()
+            })
             return apiResponse.successResponseWithData(res, "SUCCESS CREATE", result);
         }).catch(function (err)  {
             return apiResponse.ErrorResponse(res, err);
