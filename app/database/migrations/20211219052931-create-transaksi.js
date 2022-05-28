@@ -42,6 +42,9 @@ module.exports = {
       idpembeli: {
         type: Sequelize.INTEGER
       },
+      tujuan: {
+        type: Sequelize.STRING
+      },
       ongkir: {
         type: Sequelize.INTEGER
       },

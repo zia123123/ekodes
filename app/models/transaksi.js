@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     koordinat: {
       type: DataTypes.STRING
     },
+    tujuan: {
+      type: DataTypes.STRING
+    },
     catatan: {
       type: DataTypes.STRING
     },

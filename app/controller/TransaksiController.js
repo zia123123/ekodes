@@ -19,6 +19,7 @@ module.exports = {
             keranjang: req.body.keranjang,
             idtransaksi: req.body.idtransaksi,
             typetransaksi: req.body.typetransaksi,
+            tujuan: req.body.tujuan,
             idpenjual: req.body.idpenjual,
             idpembeli: req.body.idpembeli,
             ongkir: req.body.ongkir,
@@ -68,7 +69,6 @@ module.exports = {
     async indexMyOrderPembeli(req, res) {
         let result = await transaksi.findAll({
             where: {
-
                     idpembeli:  req.query.idpembeli
             }
                      
