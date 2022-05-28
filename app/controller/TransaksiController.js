@@ -93,6 +93,7 @@ module.exports = {
     // Delete
     async delete(req, res) {
         req.result.status = false;
+        req.result.ongkir =  req.body.ongkir;
         req.result.save().then(result => {
         return apiResponse.successResponseWithData(res, "SUCCESS", result);
         })
