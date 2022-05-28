@@ -68,7 +68,7 @@ module.exports = {
     async indexMyOrderPembeli(req, res) {
         let result = await transaksi.findAll({
             where: {
-                    status:  false,
+
                     idpembeli:  req.query.idpembeli
             }
                      
