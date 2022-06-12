@@ -1,9 +1,6 @@
 const { transaksi } = require('../models/index');
 const apiResponse = require("../helpers/apiResponse");
-
 const Distance = require('geo-distance');
-
-
 
 module.exports = {
 
@@ -14,7 +11,7 @@ module.exports = {
             nama: req.body.nama,
             notelp: req.body.notelp,
             koordinat: req.body.koordinat,
-            status: true,
+            status: 1,
             typebayar: req.body.typebayar,
             keranjang: req.body.keranjang,
             idtransaksi: req.body.idtransaksi,
@@ -42,9 +39,7 @@ module.exports = {
 
     async index(req, res) {
         let result = await transaksi.findAll({
-            where: {
-                status: true
-            },
+          
         }).then(result => {
             return apiResponse.successResponseWithData(res, "SUCCESS", result);
             }).catch(function (err){
