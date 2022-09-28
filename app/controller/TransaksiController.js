@@ -72,6 +72,8 @@ module.exports = {
                 return apiResponse.ErrorResponse(res, err);
             });
     },
+
+    
     // Show
     async show(req, res) {
         return apiResponse.successResponseWithData(res, "SUCCESS", req.result);
